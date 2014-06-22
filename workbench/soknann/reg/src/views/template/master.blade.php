@@ -24,6 +24,7 @@
     <?php echo HTML::style("packages/soknann/reg/bs-admin/css/layout2.css");?>
     <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/flot/examples/examples.css");?>
     <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/timeline/timeline.css");?>
+    <?php echo HTML::style('packages/soknann/reg/datatable/css/jquery.dataTables.css') ?>
     @yield('css')
 
     <!-- END PAGE LEVEL  STYLES -->
@@ -32,6 +33,21 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
+    <!-- GLOBAL SCRIPTS -->
+    <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/jquery-2.0.3.min.js"); ?>
+    <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/bootstrap/js/bootstrap.min.js"); ?>
+    <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/modernizr-2.6.2-respond-1.1.0.min.js"); ?>
+    <!-- END GLOBAL SCRIPTS -->
+    <?php echo HTML::script('packages/soknann/reg/datatable/js/jquery.dataTables.min.js'); ?>
+    <!-- PAGE LEVEL SCRIPTS -->
+<!--    <?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.js"); */?>
+    <?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.resize.js"); */?>
+    <?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.time.js"); */?>
+    <?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.stack.js"); */?>
+    --><?php /*echo HTML::script("packages/soknann/reg/bs-admin/js/for_index.js"); */?>
+
+    <!-- END PAGE LEVEL SCRIPTS -->
 </head>
 
 <!-- END HEAD -->
@@ -81,25 +97,7 @@
 <!--END FOOTER -->
 
 
-<!-- GLOBAL SCRIPTS -->
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/jquery-2.0.3.min.js"); ?>
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/bootstrap/js/bootstrap.min.js"); ?>
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/modernizr-2.6.2-respond-1.1.0.min.js"); ?>
-<!-- END GLOBAL SCRIPTS -->
 
-<!-- PAGE LEVEL SCRIPTS -->
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.js"); ?>
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.resize.js"); ?>
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.time.js"); ?>
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.stack.js"); ?>
-<?php echo HTML::script("packages/soknann/reg/bs-admin/js/for_index.js"); ?>
-
-<?php echo HTML::script("packages/soknann/reg/bs-admin/js/notifications.js");?>
-<script>
-    $(function () { Notifications(); });
-</script>
-
-<!-- END PAGE LEVEL SCRIPTS -->
 @yield('js')
 
 </body>

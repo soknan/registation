@@ -27,7 +27,20 @@ Route::group(array('prefix' => 'reg','before' => 'auth.reg'),function () {
         'as' => 'reg.logout',
         'uses' => 'Soknann\Reg\HomeController@getLogout',
     ));
+    Route::get('user', array(
+        'as' => 'reg.user',
+        'uses' => 'Soknann\Reg\UserController@index',
+    ));
+
 });
+
+/*
+ * DataTable Index
+ */
+Route::get('api/user',array(
+    'as'=>'api.user',
+    'uses'=>'Soknann\Reg\UserController@getDatatable'
+));
 
 
 Route::get('test',function(){

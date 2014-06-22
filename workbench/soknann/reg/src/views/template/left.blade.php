@@ -25,11 +25,13 @@
 <li class="panel active">
     <a href="{{ route('reg.home')}}" >
         <i class="icon-table"></i> Dashboard
-
-
     </a>
 </li>
-
+<li class="panel">
+    <a href="{{ route('reg.user')}}" >
+        <i class="icon-table"></i> Users
+    </a>
+</li>
 
 
 <li class="panel ">

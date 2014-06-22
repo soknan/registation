@@ -126,7 +126,7 @@ return array(
         //New
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Former\FormerServiceProvider',
-        'Bllim\Datatables\DatatablesServiceProvider',
+        'Chumper\Datatable\DatatableServiceProvider',
 
 	),
 
@@ -196,7 +196,8 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
         //New
         'Former' => 'Former\Facades\Former',
-        'Datatables'      => 'Bllim\Datatables\Datatables',
+        'Datatable'       => 'Chumper\Datatable\Facades\DatatableFacade',
+
 
 	),
 

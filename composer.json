@@ -7,7 +7,7 @@
 		"laravel/framework": "4.2.*",
         "barryvdh/laravel-ide-helper": "dev-master",
         "anahkiasen/former": "dev-develop",
-        "bllim/datatables": "dev-master"
+        "chumper/datatable": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
