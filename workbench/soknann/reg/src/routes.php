@@ -6,3 +6,8 @@
  * Time: 12:45 PM
  * To change this template use File | Settings | File Templates.
  */
+
+Route::get('login',array(
+    'as'=>'reg.login',
+    'uses'=>'Soknann\Reg\HomeController@getLogin'
+));

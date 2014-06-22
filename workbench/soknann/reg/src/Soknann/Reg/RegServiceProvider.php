@@ -18,7 +18,7 @@ class RegServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('soknann/reg');
+		$this->package('soknann/reg','soknann/reg');
         include __DIR__ . '/../../filters.php';
         include __DIR__ . '/../../routes.php';
 	}
