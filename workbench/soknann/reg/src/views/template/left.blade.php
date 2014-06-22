@@ -1,5 +1,5 @@
 <!-- MENU SECTION -->
-<div id="left" >
+<div id="left">
 <div class="media user-media well-small">
     <a class="user-link" href="#">
         <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/user.gif" />
@@ -23,7 +23,7 @@
 
 
 <li class="panel active">
-    <a href="index.html" >
+    <a href="{{ route('reg.home')}}" >
         <i class="icon-table"></i> Dashboard
 
 

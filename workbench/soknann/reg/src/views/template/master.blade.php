@@ -13,17 +13,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
     <!-- GLOBAL STYLES -->
-    {{ HTML::style("packages/soknann/reg/bs-admin/plugins/bootstrap/css/bootstrap.css") }}
+    <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/bootstrap/css/bootstrap.css");?>
     <?php echo HTML::style("packages/soknann/reg/bs-admin/css/main.css"); ?>
     <?php echo HTML::style("packages/soknann/reg/bs-admin/css/theme.css"); ?>
-    <?php echo HTML::style("packages/soknann/reg/bs-adminassets/css/MoneAdmin.css"); ?>
+    <?php echo HTML::style("packages/soknann/reg/bs-admin/css/MoneAdmin.css"); ?>
     <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/Font-Awesome/css/font-awesome.css"); ?>
     <!--END GLOBAL STYLES -->
 
     <!-- PAGE LEVEL STYLES -->
-    <link href="assets/css/layout2.css" rel="stylesheet" />
-    <link href="assets/plugins/flot/examples/examples.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/plugins/timeline/timeline.css" />
+    <?php echo HTML::style("packages/soknann/reg/bs-admin/css/layout2.css");?>
+    <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/flot/examples/examples.css");?>
+    <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/timeline/timeline.css");?>
     @yield('css')
 
     <!-- END PAGE LEVEL  STYLES -->
@@ -39,7 +39,7 @@
 <!-- BEGIN BODY -->
 <body class="padTop53 " >
 <!-- MAIN WRAPPER -->
-<div id="wrap" >
+<div id="wrap">
 
 <!-- HEADER SECTION -->
     @include('soknann/reg::template.header')
@@ -51,9 +51,19 @@
     @endif
 <!--END MENU SECTION -->
 
-<!--Content Section-->
-    @yield('content')
-<!--End Content-->
+    <div id="content">
+        <div class="inner" style="min-height: 700px;">
+
+            <!--Message Section-->
+            @include('soknann/reg::template.msg')
+            <!--End Message-->
+
+            <!--Content Section-->
+            @yield('content')
+            <!--End Content-->
+
+        </div>
+    </div>
 
 <!-- RIGHT STRIP  SECTION -->
     @if(Auth::check())
@@ -66,7 +76,7 @@
 
 <!-- FOOTER -->
 @if(Auth::check())
-    @include('soknnan/reg::template.footer')
+    @include('soknann/reg::template.footer')
 @endif
 <!--END FOOTER -->
 
@@ -83,6 +93,11 @@
 <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.time.js"); ?>
 <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.stack.js"); ?>
 <?php echo HTML::script("packages/soknann/reg/bs-admin/js/for_index.js"); ?>
+
+<?php echo HTML::script("packages/soknann/reg/bs-admin/js/notifications.js");?>
+<script>
+    $(function () { Notifications(); });
+</script>
 
 <!-- END PAGE LEVEL SCRIPTS -->
 @yield('js')

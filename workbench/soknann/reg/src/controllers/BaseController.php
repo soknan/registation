@@ -12,6 +12,6 @@ class BaseController extends Controller {
     public function renderLayout($view){
         $this->layout = $view;
         $this->layout->title = 'Registration';
-        $this->layout->logo = 'packages/soknann/reg/bs-admin/img/logo.png';
+        $this->layout->logo = url('packages/soknann/reg/bs-admin/img/logo.png');
     }
 }
