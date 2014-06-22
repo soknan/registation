@@ -40,12 +40,7 @@
     <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/modernizr-2.6.2-respond-1.1.0.min.js"); ?>
     <!-- END GLOBAL SCRIPTS -->
     <?php echo HTML::script('packages/soknann/reg/datatable/js/jquery.dataTables.min.js'); ?>
-    <!-- PAGE LEVEL SCRIPTS -->
-<!--    <?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.js"); */?>
-    <?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.resize.js"); */?>
-    <?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.time.js"); */?>
-    <?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.stack.js"); */?>
-    --><?php /*echo HTML::script("packages/soknann/reg/bs-admin/js/for_index.js"); */?>
+
 
     <!-- END PAGE LEVEL SCRIPTS -->
 </head>
@@ -96,8 +91,12 @@
 @endif
 <!--END FOOTER -->
 
-
-
+<!-- PAGE LEVEL SCRIPTS -->
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.js"); ?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.resize.js"); ?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.time.js"); ?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.stack.js"); ?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/js/for_index.js"); ?>
 @yield('js')
 
 </body>

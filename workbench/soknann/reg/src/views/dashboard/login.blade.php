@@ -1,20 +1,46 @@
-@extends('soknann/reg::template.master')
-@section('css')
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="UTF-8" />
+    <title>BCORE Admin Dashboard Template | Login Page</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <!-- GLOBAL STYLES -->
+    <!-- PAGE LEVEL STYLES -->
+    <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/bootstrap/css/bootstrap.css");?>
     <?php echo HTML::style("packages/soknann/reg/bs-admin/css/login.css");?>
     <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/magic/magic.css");?>
-@stop
-@section('content')
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+<body >
 
 <!-- PAGE CONTENT -->
 <div class="container">
+    @include('soknann/reg::template.msg')
     <div class="tab-content">
         <div id="login" class="tab-pane active">
-            {{ Former::open(route('reg.login'))->class('form-signin')->method('POST') }}
+            {{ Former::open(route('reg.login'))->method('POST')->class('form-signin')}}
                 <p class="text-muted text-center btn-block btn btn-primary btn-rect">
                     Enter your username and password
                 </p>
-                {{ Former::text('username','')->class('form-control')->placeholder('username')}}
-                {{ Former::password('password','')->class('form-control')->placeholder('password')}}
+                {{Former::text('username','')->class('form-control')->placeholder('username')}}
+                {{Former::password('password','')->class('form-control')->placeholder('username')}}
                 <button class="btn text-muted text-center btn-danger" type="submit">Sign in</button>
             {{ Former::close()}}
         </div>
@@ -46,12 +72,18 @@
             <li><a class="text-muted" href="#signup" data-toggle="tab">Signup</a></li>
         </ul>
     </div>
+
+
 </div>
 
-
-
 <!--END PAGE CONTENT -->
-@stop
-@section('js')
-    <?php echo HTML::script("packages/soknann/reg/bs-admin/js/login.js");?>
-@stop
+
+<!-- PAGE LEVEL SCRIPTS -->
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/jquery-2.0.3.min.js");?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/bootstrap/js/bootstrap.js");?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/js/login.js");?>
+<!--END PAGE LEVEL SCRIPTS -->
+
+</body>
+<!-- END BODY -->
+</html>

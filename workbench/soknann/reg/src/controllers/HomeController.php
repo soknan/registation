@@ -15,9 +15,7 @@ use Auth;
 
 class HomeController extends BaseController{
     public function getLogin(){
-        return $this->renderLayout(
-            \View::make('soknann/reg::dashboard.login')
-        );
+        return \View::make('soknann/reg::dashboard.login');
     }
 
     public function postLogin(){

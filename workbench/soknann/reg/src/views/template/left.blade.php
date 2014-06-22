@@ -22,14 +22,14 @@
 <ul id="menu" class="collapse">
 
 
-<li class="panel active">
+<li class="panel">
     <a href="{{ route('reg.home')}}" >
         <i class="icon-table"></i> Dashboard
     </a>
 </li>
 <li class="panel">
     <a href="{{ route('reg.user')}}" >
-        <i class="icon-table"></i> Users
+        <i class="icon-user"></i> Users
     </a>
 </li>
 
@@ -220,7 +220,7 @@
 
 
 <li><a href="gallery.html"><i class="icon-film"></i> Image Gallery </a></li>
-<li><a href="tables.html"><i class="icon-table"></i> Data Tables </a></li>
+<li><a href="{{ route('reg.user')}}"><i class="icon-table"></i> Data Tables </a></li>
 <li><a href="maps.html"><i class="icon-map-marker"></i> Maps </a></li>
 
 <li><a href="grid.html"><i class="icon-columns"></i> Grid </a></li>
