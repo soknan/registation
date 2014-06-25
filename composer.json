@@ -7,7 +7,9 @@
 		"laravel/framework": "4.2.*",
         "barryvdh/laravel-ide-helper": "dev-master",
         "anahkiasen/former": "dev-develop",
-        "chumper/datatable": "dev-master"
+        "chumper/datatable": "dev-master",
+        "fadion/validator-assistant": "dev-master",
+        "fadion/rule": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

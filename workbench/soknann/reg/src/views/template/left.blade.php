@@ -28,7 +28,7 @@
     </a>
 </li>
 <li class="panel">
-    <a href="{{ route('reg.user')}}" >
+    <a href="{{ route('reg.user.index')}}" >
         <i class="icon-user"></i> Users
     </a>
 </li>
@@ -220,7 +220,7 @@
 
 
 <li><a href="gallery.html"><i class="icon-film"></i> Image Gallery </a></li>
-<li><a href="{{ route('reg.user')}}"><i class="icon-table"></i> Data Tables </a></li>
+<li><a href="{{ route('reg.user.index')}}"><i class="icon-table"></i> Data Tables </a></li>
 <li><a href="maps.html"><i class="icon-map-marker"></i> Maps </a></li>
 
 <li><a href="grid.html"><i class="icon-columns"></i> Grid </a></li>

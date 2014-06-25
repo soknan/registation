@@ -21,6 +21,7 @@ class RegServiceProvider extends ServiceProvider {
 		$this->package('soknann/reg','soknann/reg');
         include __DIR__ . '/../../filters.php';
         include __DIR__ . '/../../routes.php';
+        \Former::framework('TwitterBootstrap3');
 	}
 
 	/**
@@ -30,7 +31,19 @@ class RegServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+        // Facade for Lookup
+        $this->app['lookup'] = $this->app->share(
+            function ($app) {
+                return new Libraries\Lookup;
+            }
+        );
+
+        $this->app->booting(
+            function () {
+                $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+                $loader->alias('Lookup', 'Soknann\Reg\Facades\Lookup');
+            }
+        );
 	}
 
 	/**

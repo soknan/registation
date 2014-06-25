@@ -28,10 +28,36 @@ Route::group(array('prefix' => 'reg','before' => 'auth.reg'),function () {
         'uses' => 'Soknann\Reg\HomeController@getLogout',
     ));
     Route::get('user', array(
-        'as' => 'reg.user',
+        'as' => 'reg.user.index',
         'uses' => 'Soknann\Reg\UserController@index',
     ));
+    Route::post('user',array(
+        'as'=>'reg.user.store',
+        'uses'=>'Soknann\Reg\UserController@store',
+    ));
+    Route::get('user/add', array(
+        'as' => 'reg.user.add',
+        'uses' => 'Soknann\Reg\UserController@add',
+    ));
 
+    Route::get('user/edit/{id}', array(
+        'as' => 'reg.user.edit',
+        'uses' => 'Soknann\Reg\UserController@edit',
+    ));
+
+    Route::get('user/{id}/edit', array(
+        'as' => 'reg.user.edit',
+        'uses' => 'Soknann\Reg\UserController@edit',
+    ));
+
+    Route::put('user/update/{id}', array(
+        'as' => 'reg.user.update',
+        'uses' => 'Soknann\Reg\UserController@update',
+    ));
+    Route::delete('user/destroy/{id}',array(
+        'as'=>'reg.user.destroy',
+        'uses'=>'Soknann\Reg\UserController@destroy',
+    ));
 });
 
 /*

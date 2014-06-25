@@ -127,6 +127,8 @@ return array(
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Former\FormerServiceProvider',
         'Chumper\Datatable\DatatableServiceProvider',
+        'Fadion\ValidatorAssistant\ValidatorAssistantServiceProvider',
+        'Fadion\Rule\RuleServiceProvider',
 
 	),
 
@@ -197,6 +199,8 @@ return array(
         //New
         'Former' => 'Former\Facades\Former',
         'Datatable'       => 'Chumper\Datatable\Facades\DatatableFacade',
+        'ValidatorAssistant' => 'Fadion\ValidatorAssistant\ValidatorAssistant',
+        'Rule' => 'Fadion\Rule\Facades\Rule',
 
 
 	),

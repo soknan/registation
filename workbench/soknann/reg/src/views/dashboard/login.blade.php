@@ -39,8 +39,8 @@
                 <p class="text-muted text-center btn-block btn btn-primary btn-rect">
                     Enter your username and password
                 </p>
-                {{Former::text('username','')->class('form-control')->placeholder('username')}}
-                {{Former::password('password','')->class('form-control')->placeholder('username')}}
+            <input name="username" type="text" placeholder="Username" class="form-control" />
+            <input name="password" type="password" placeholder="Password" class="form-control" />
                 <button class="btn text-muted text-center btn-danger" type="submit">Sign in</button>
             {{ Former::close()}}
         </div>

@@ -21,7 +21,7 @@
     <!--END GLOBAL STYLES -->
 
     <!-- PAGE LEVEL STYLES -->
-    <?php echo HTML::style("packages/soknann/reg/bs-admin/css/layout2.css");?>
+   <!-- --><?php /*echo HTML::style("packages/soknann/reg/bs-admin/css/layout2.css");*/?>
     <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/flot/examples/examples.css");?>
     <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/timeline/timeline.css");?>
     <?php echo HTML::style('packages/soknann/reg/datatable/css/jquery.dataTables.css') ?>
@@ -63,7 +63,6 @@
 <!--END MENU SECTION -->
 
     <div id="content">
-        <div class="inner" style="min-height: 700px;">
 
             <!--Message Section-->
             @include('soknann/reg::template.msg')
@@ -73,13 +72,12 @@
             @yield('content')
             <!--End Content-->
 
-        </div>
     </div>
 
 <!-- RIGHT STRIP  SECTION -->
-    @if(Auth::check())
+    <!--@if(Auth::check())
         @include('soknann/reg::template.right')
-    @endif
+    @endif-->
 <!-- END RIGHT STRIP  SECTION -->
 </div>
 

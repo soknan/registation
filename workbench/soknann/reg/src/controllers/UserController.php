@@ -11,6 +11,11 @@ namespace Soknann\Reg;
 
 use Soknann\Reg\BaseController;
 use Chumper\Datatable\Datatable;
+use Soknann\Reg\Validators\UserValidator;
+use Redirect;
+use View;
+use Input;
+
 class UserController extends BaseController{
     public function index()
     {
@@ -41,6 +46,89 @@ class UserController extends BaseController{
         );
     }
 
+    public function add(){
+        return $this->renderLayout(
+            \View::make('soknann/reg::users.add')
+        );
+    }
+
+    public function store()
+    {
+        $validator = UserValidator::make();
+        if ($validator->passes()) {
+
+            $inputs = $validator->inputs();
+
+            $data = new UserModel();
+            $this->saveData($data, $inputs);
+
+            return Redirect::back()
+                ->with('success', "Save Successful");
+
+        }
+        return \Redirect::back()->withInput()->withErrors($validator->errors());
+    }
+
+    public function edit($id){
+        $data['row'] = UserModel::findOrFail($id);
+        return $this->renderLayout(
+            \View::make('soknann/reg::users.edit',$data)
+        );
+    }
+
+    public function update($id)
+    {
+        try {
+            $validator = UserValidator::make();
+            if ($validator->passes()) {
+
+                $inputs = $validator->inputs();
+
+                $data = UserModel::findOrFail($id);
+                $this->saveData($data, $inputs);
+
+                return Redirect::back()
+                    ->with('success', "Update Successful");
+            }
+            return Redirect::back()->withInput()->withErrors($validator->errors());
+        } catch (\Exception $e) {
+            return Redirect::route('reg.user.index')->with('error', "Errors ");
+        }
+    }
+
+    public function destroy($id)
+    {
+        try {
+            $currentUser = \Auth::user()->id;
+            if ($currentUser == $id) {
+                return Redirect::back()
+                    ->with('error', trans('battambang/cpanel::user.delete_denied'));
+            }
+            $data = UserModel::findOrFail($id);
+            $data->delete();
+            return Redirect::back()->with('success', trans('battambang/cpanel::user.delete_success'));
+        } catch (\Exception $e) {
+            return Redirect::route('reg.user.index')->with('error', trans('battambang/cpanel::db_error.fail'));
+        }
+    }
+    private function saveData($data, $inputs)
+    {
+        $passHash = \Hash::make($inputs['password']);
+
+        $data->first_name = $inputs['first_name'];
+        $data->last_name = $inputs['last_name'];
+        $data->email = $inputs['email'];
+        $data->username = $inputs['username'];
+        $data->password = $passHash;
+        $data->password_his_arr = json_encode(array($passHash));
+        $data->expire_day = $inputs['expire_day'];
+        $data->activated = $inputs['activated'];
+        $data->activated_at = $inputs['activated_at'];
+        $data->group_id = json_encode($inputs['group']);
+//        $data->remember_token = '';
+        $data->save();
+    }
+
     public function getDatatable()
     {
         $item = array(
@@ -49,7 +137,7 @@ class UserController extends BaseController{
             'last_name',
             'email',*/
             'username',
-            'cp_group_id_arr',
+            'group_id',
             'expire_day',
             'activated',
             /*'activated_at'*/
