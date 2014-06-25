@@ -148,8 +148,12 @@ class UserController extends BaseController{
             ->addColumn(
                 'action',
                 function ($model) {
-                    return 'no';
-                })
+                    return \Action::make()
+                        ->edit(route('reg.user.edit', $model->id))
+                        ->delete(route('reg.user.destroy', $model->id), $model->id)
+                        ->get();
+                }
+            )
             ->showColumns($item)
             ->searchColumns(array('id', 'username'))
             ->orderColumns($item)

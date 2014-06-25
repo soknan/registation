@@ -44,6 +44,20 @@ class RegServiceProvider extends ServiceProvider {
                 $loader->alias('Lookup', 'Soknann\Reg\Facades\Lookup');
             }
         );
+
+        // Facade for Action
+        $this->app['action'] = $this->app->share(
+            function ($app) {
+                return new Libraries\Action;
+            }
+        );
+
+        $this->app->booting(
+            function () {
+                $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+                $loader->alias('Action', 'Soknann\Reg\Facades\Action');
+            }
+        );
 	}
 
 	/**

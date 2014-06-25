@@ -35,10 +35,14 @@
     <![endif]-->
 
     <!-- GLOBAL SCRIPTS -->
+    <?php echo HTML::script("packages/soknann/reg/bootbox/admin.js"); ?>
+    <?php echo HTML::script("packages/soknann/reg/bootbox/bootbox.min.js"); ?>
+
     <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/jquery-2.0.3.min.js"); ?>
     <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/bootstrap/js/bootstrap.min.js"); ?>
     <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/modernizr-2.6.2-respond-1.1.0.min.js"); ?>
     <!-- END GLOBAL SCRIPTS -->
+
     <?php echo HTML::script('packages/soknann/reg/datatable/js/jquery.dataTables.min.js'); ?>
 
 
@@ -95,6 +99,7 @@
 <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.time.js"); ?>
 <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.stack.js"); ?>
 <?php echo HTML::script("packages/soknann/reg/bs-admin/js/for_index.js"); ?>
+
 @yield('js')
 
 </body>
