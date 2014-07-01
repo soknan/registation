@@ -34,19 +34,11 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-    <!-- GLOBAL SCRIPTS -->
-    <?php echo HTML::script("packages/soknann/reg/bootbox/admin.js"); ?>
-    <?php echo HTML::script("packages/soknann/reg/bootbox/bootbox.min.js"); ?>
 
     <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/jquery-2.0.3.min.js"); ?>
-    <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/bootstrap/js/bootstrap.min.js"); ?>
-    <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/modernizr-2.6.2-respond-1.1.0.min.js"); ?>
-    <!-- END GLOBAL SCRIPTS -->
-
-    <?php echo HTML::script('packages/soknann/reg/datatable/js/jquery.dataTables.min.js'); ?>
+    <?php echo HTML::script("packages/soknann/reg/bootbox/bootbox.min.js"); ?>
 
 
-    <!-- END PAGE LEVEL SCRIPTS -->
 </head>
 
 <!-- END HEAD -->
@@ -92,16 +84,22 @@
     @include('soknann/reg::template.footer')
 @endif
 <!--END FOOTER -->
+<!-- GLOBAL SCRIPTS -->
 
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/bootstrap/js/bootstrap.min.js"); ?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/modernizr-2.6.2-respond-1.1.0.min.js"); ?>
+<?php echo HTML::script('packages/soknann/reg/datatable/js/jquery.dataTables.min.js'); ?>
+<!-- END GLOBAL SCRIPTS -->
 <!-- PAGE LEVEL SCRIPTS -->
 <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.js"); ?>
 <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.resize.js"); ?>
 <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.time.js"); ?>
 <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.stack.js"); ?>
-<?php echo HTML::script("packages/soknann/reg/bs-admin/js/for_index.js"); ?>
+<?php /*echo HTML::script("packages/soknann/reg/bs-admin/js/for_index.js"); */?>
+<!-- END PAGE LEVEL SCRIPTS -->
+<?php echo HTML::script("packages/soknann/reg/bootbox/admin.js"); ?>
 
 @yield('js')
-
 </body>
 
 <!-- END BODY -->
