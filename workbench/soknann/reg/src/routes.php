@@ -58,6 +58,7 @@ Route::group(array('prefix' => 'reg','before' => 'auth.reg'),function () {
         'as'=>'reg.user.destroy',
         'uses'=>'Soknann\Reg\UserController@destroy',
     ));
+
 });
 
 /*

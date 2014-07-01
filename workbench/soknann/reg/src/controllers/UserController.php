@@ -102,13 +102,13 @@ class UserController extends BaseController{
             $currentUser = \Auth::user()->id;
             if ($currentUser == $id) {
                 return Redirect::back()
-                    ->with('error', trans('battambang/cpanel::user.delete_denied'));
+                    ->with('error', trans('soknann/reg::user.delete_denied'));
             }
             $data = UserModel::findOrFail($id);
             $data->delete();
-            return Redirect::back()->with('success', trans('battambang/cpanel::user.delete_success'));
+            return Redirect::back()->with('success', trans('soknann/reg::user.delete_success'));
         } catch (\Exception $e) {
-            return Redirect::route('reg.user.index')->with('error', trans('battambang/cpanel::db_error.fail'));
+            return Redirect::route('reg.user.index')->with('error', trans('soknann/reg::db_error.fail'));
         }
     }
     private function saveData($data, $inputs)
@@ -150,7 +150,7 @@ class UserController extends BaseController{
                 function ($model) {
                     return \Action::make()
                         ->edit(route('reg.user.edit', $model->id))
-                        ->delete(route('reg.user.destroy', $model->id), $model->id)
+                        ->delete(route('reg.user.destroy', $model->id))
                         ->get();
                 }
             )
