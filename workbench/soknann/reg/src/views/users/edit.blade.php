@@ -33,7 +33,7 @@
                             ->required()}}
                             {{Former::text('activated_at', 'Activated Date',$row->activated_at)
                             ->placeholder(' dd-mm-yyyy')
-                            ->append('<span class="glyphicon glyphicon-calendar"></span>')}}
+                            }}
 
                             {{Former::select('group[]', 'Group')
                             ->options(\Lookup::getGroupList(),json_decode($row->group_id, true))
@@ -51,4 +51,13 @@
     {{Former::close()}}
 </div>
 
+@stop
+@section('js')
+<script>
+    $('#activated_at').datepicker({
+        format: 'mm-dd-yyyy'
+    });
+    $('#activated_at').datepicker();
+
+</script>
 @stop

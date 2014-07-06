@@ -30,10 +30,11 @@
                             {{ Former::text('expire_day', 'Expire Day')->required() }}
                             {{Former::select('activated', 'Activated', \Lookup::getUserActiveList())
                             ->placeholder('- Select One -')
+                            ->class("form-control chzn-select")
                             ->required()}}
                             {{Former::text('activated_at', 'Activated Date')
                             ->placeholder(' dd-mm-yyyy')
-                            ->append('<span class="glyphicon glyphicon-calendar"></span>')}}
+                            }}
 
                             {{Former::select('group[]', 'Group')
                             ->options(\Lookup::getGroupList())
@@ -46,9 +47,19 @@
         </div>
     </div>
     <div class="text-center">
-        {{ Former::lg_primary_submit('Save') . '&nbsp;' . Former::lg_inverse_reset('Cancel') }}
+        {{ Former::lg_primary_submit('Save') . '&nbsp;' . Former::lg_inverse_reset('Reset') }}
     </div>
     {{Former::close()}}
 </div>
 
+@stop
+
+@section('js')
+    <script>
+        $('#activated_at').datepicker({
+            format: 'mm-dd-yyyy'
+        });
+        $('#activated_at').datepicker();
+
+    </script>
 @stop

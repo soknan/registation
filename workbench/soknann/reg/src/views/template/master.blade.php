@@ -22,11 +22,16 @@
 
     <!-- PAGE LEVEL STYLES -->
    <!-- --><?php /*echo HTML::style("packages/soknann/reg/bs-admin/css/layout2.css");*/?>
+    <?php echo HTML::style("packages/soknann/reg/bs-admin/css/jquery-ui.css"); ?>
+    <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/uniform/themes/default/css/uniform.default.css"); ?>
+    <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/chosen/chosen.min.css");?>
     <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/flot/examples/examples.css");?>
     <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/timeline/timeline.css");?>
-    <?php echo HTML::style('packages/soknann/reg/datatable/css/jquery.dataTables.css') ?>
-    @yield('css')
+    <?php echo HTML::style('packages/soknann/reg/datatable/css/jquery.dataTables.css'); ?>
+    <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/daterangepicker/daterangepicker-bs3.css"); ?>
+    <?php echo HTML::style("packages/soknann/reg/bs-admin/plugins/datepicker/css/datepicker.css"); ?>
 
+    @yield('css')
     <!-- END PAGE LEVEL  STYLES -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -34,10 +39,14 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-
+    <!-- GLOBAL SCRIPTS -->
     <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/jquery-2.0.3.min.js"); ?>
     <?php echo HTML::script("packages/soknann/reg/bootbox/bootbox.min.js"); ?>
-
+    <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/bootstrap/js/bootstrap.min.js"); ?>
+    <?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/modernizr-2.6.2-respond-1.1.0.min.js"); ?>
+    <?php echo HTML::script('packages/soknann/reg/datatable/js/jquery.dataTables.min.js'); ?>
+    <?php echo HTML::script("packages/soknann/reg/bootbox/box.js");?>
+    <!-- END GLOBAL SCRIPTS -->
 
 </head>
 
@@ -84,20 +93,24 @@
     @include('soknann/reg::template.footer')
 @endif
 <!--END FOOTER -->
-<!-- GLOBAL SCRIPTS -->
 
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/bootstrap/js/bootstrap.min.js"); ?>
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/modernizr-2.6.2-respond-1.1.0.min.js"); ?>
-<?php echo HTML::script('packages/soknann/reg/datatable/js/jquery.dataTables.min.js'); ?>
-<!-- END GLOBAL SCRIPTS -->
+
+
 <!-- PAGE LEVEL SCRIPTS -->
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.js"); ?>
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.resize.js"); ?>
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.time.js"); ?>
-<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.stack.js"); ?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/js/jquery-ui.min.js");?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/uniform/jquery.uniform.min.js");?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/chosen/chosen.jquery.min.js"); ?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/daterangepicker/daterangepicker.js"); ?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/daterangepicker/moment.min.js"); ?>
+<?php echo HTML::script("packages/soknann/reg/bs-admin/plugins/datepicker/js/bootstrap-datepicker.js"); ?>
+<?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.js"); */?><!--
+<?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.resize.js"); */?>
+<?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.time.js"); */?>
+--><?php /*echo HTML::script("packages/soknann/reg/bs-admin/plugins/flot/jquery.flot.stack.js"); */?>
 <?php /*echo HTML::script("packages/soknann/reg/bs-admin/js/for_index.js"); */?>
+
 <!-- END PAGE LEVEL SCRIPTS -->
-<?php echo HTML::script("packages/soknann/reg/bootbox/admin.js"); ?>
+
 
 @yield('js')
 </body>
